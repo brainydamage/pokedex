@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import {PokeContext} from '../App';
 import {Button, Card, Col, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {PokeContext} from '../index';
 
 const PokemonList = (props) => {
   const {
@@ -15,6 +15,10 @@ const PokemonList = (props) => {
   console.log(`capturedPokemons = ${JSON.stringify(capturedPokemons)}`);
 
   const capture = (pokemon) => {
+
+
+
+    pokemon.isCaptured = true;
     setCapturedPokemons(capturedPokemons => [...capturedPokemons, pokemon]);
     // setPokemons(pokemons.filter(poke => poke.id !== pokemon.id));
     setPokemons(pokemons.map(
@@ -41,10 +45,6 @@ const PokemonList = (props) => {
           <Col key={idx}>
             <Card style={{width: '10rem'}}
                   border="danger"
-              // onClick={onClick}
-              // style={{
-              //   cursor: "pointer"
-              // }}
             >
               <Card.Header>{pokemon.id}</Card.Header>
               <Link to={`/pokemons/${pokemon.id}`}>
