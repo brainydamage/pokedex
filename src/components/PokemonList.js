@@ -33,10 +33,6 @@ const PokemonList = (props) => {
                      alt={pokemon.name}/>;
   }
 
-  function onClick() {
-    console.log(`card clicked!`);
-  }
-
   return (
     <div className="poke-list">
       <h2>Pokemons</h2>

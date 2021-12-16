@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Link, useParams} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 import {Api} from '../api/pokeapi';
 import {
   Badge,
@@ -17,17 +17,15 @@ const PokemonInfo = () => {
   const [loading, setLoading] = useState(false);
   let {id} = useParams();
 
-  console.log('hi from PI component');
-
-  const getPokemon = async () => {
-    setLoading(true);
-    const info = await Api.getPokeInfo(id);
-    setInfo(info);
-    setAvatar(info.avatar);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const getPokemon = async () => {
+      setLoading(true);
+      const info = await Api.getPokeInfo(id);
+      setInfo(info);
+      setAvatar(info.avatar);
+      setLoading(false);
+    };
+
     getPokemon();
   }, [id]);
 

@@ -1,8 +1,7 @@
 import Main from './pages/Main';
 import Header from './components/Header';
-import React, {createContext, useContext, useEffect, useState} from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {Api} from './api/pokeapi';
+import React, {useContext} from 'react';
+import {Route, Routes} from 'react-router-dom';
 import PokemonInfo from './pages/PokemonInfo';
 import {PokeContext} from './index';
 

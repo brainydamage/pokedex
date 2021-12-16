@@ -21,6 +21,8 @@ function Wrapper() {
     setCapturedPokemons,
   };
 
+  console.log(nextPage);
+
   async function retrievePokes() {
     try {
       const fetchResponse = await Api.getPokes(3);
